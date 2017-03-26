@@ -35,7 +35,7 @@ export class CustomersService {
     headers.append('Access-Control-Allow-Headers', '*');
     headers.append('Access-Control-Allow-Methods', '*');
     headers.append('Access-Control-Allow-Origin', '*');
-    return this.http.put('http://pointwestapi-dev.us-west-2.elasticbeanstalk.com/api/customers/' + id, customer, { headers: headers })
+    return this.http.put('https://pointwestapi-dev.us-west-2.elasticbeanstalk.com/api/customers/' + id, customer, { headers: headers })
       .map(res => res.json());
   }
 

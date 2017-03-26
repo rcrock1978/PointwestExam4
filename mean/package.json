@@ -7,11 +7,11 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "node app"
   },
-  "author": "Raymund C Caringal",
-  "license": "ISC",
   "dependencies": {
     "body-parser": "^1.17.1",
-    "express": "^4.15.2",
-    "ng2-bootstrap": "^1.4.2"
-  }
+    "cors": "^2.8.1",
+    "express": "^4.15.2"
+  },
+  "author": "Raymund C Caringal",
+  "license": "ISC"
 }
