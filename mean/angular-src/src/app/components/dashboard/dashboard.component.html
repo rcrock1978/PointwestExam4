@@ -1,0 +1,24 @@
+<div class="panel-body">
+    <table width="100%" class="table table-striped table-bordered table-hover" id="dataTables-example">
+        <thead>
+            <tr>
+                <th>#</th>
+                <th>First Name</th>
+                <th>Last Name</th>
+                <th>Birthday</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let customer of customers; let i =  $index" (click)="setClickedRow(customer)" [class.acive]="i == selectedRow">
+                <td>{{i}}</td>
+                <td>{{customer.First_Name}}</td>
+                <td>{{customer.Last_Name}}</td>
+                <td>{{customer.BirthDate | date: 'dd'}}/{{customer.BirthDate | date:'MM'}}/{{customer.BirthDate | date: 'yyyy'}}</td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+
+<div class="well well-lg">
+    <a class="btn btn-primary" [routerLink]="['/add']">Add Customers</a>
+</div>

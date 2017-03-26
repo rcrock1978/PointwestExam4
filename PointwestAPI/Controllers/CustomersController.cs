@@ -7,9 +7,11 @@ using System.Web.Http;
 using PointwestAPI.Core.Dtos;
 using PointwestAPI.Persistence;
 using PointwestAPI.Core;
+using System.Web.Http.Cors;
 
 namespace PointwestAPI.Controllers
 {
+    [EnableCors(origins: "*", headers: "*", methods: "*")]
     public class CustomersController : ApiController
     {
         private readonly IUnitOfWorks _unitOfWork;
