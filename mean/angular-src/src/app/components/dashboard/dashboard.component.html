@@ -9,8 +9,8 @@
             </tr>
         </thead>
         <tbody>
-            <tr *ngFor="let customer of customers; let i =  $index" (click)="setClickedRow(customer)" [class.acive]="i == selectedRow">
-                <td>{{i}}</td>
+            <tr *ngFor="let customer of customers" [class.acive]="i == selectedRow">
+                <td><a class="btn btn-primary" [routerLink]="['/edit', customer.Id]">Edit</a> || <a class="btn btn-danger" [routerLink]="['/remove', customer.Id]">Delete</a></td>
                 <td>{{customer.First_Name}}</td>
                 <td>{{customer.Last_Name}}</td>
                 <td>{{customer.BirthDate | date: 'dd'}}/{{customer.BirthDate | date:'MM'}}/{{customer.BirthDate | date: 'yyyy'}}</td>
@@ -20,5 +20,6 @@
 </div>
 
 <div class="well well-lg">
+   <a class="btn btn-default" [routerLink]="['']">Home</a>
     <a class="btn btn-primary" [routerLink]="['/add']">Add Customers</a>
 </div>

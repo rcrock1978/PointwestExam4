@@ -97,5 +97,20 @@ namespace PointwestAPI.Controllers
             }
         }
 
+        [HttpGet]
+        public IHttpActionResult Get(int id)
+        {
+            try
+            {
+                var content = _unitOfWork.Customer.GetCustomer(id);
+                return Ok(content);
+
+            }
+            catch (Exception ex)
+            {
+                return Content(HttpStatusCode.BadRequest, ex.Source + " " + ex.InnerException.Message);
+            }
+        }
+
     }
 }

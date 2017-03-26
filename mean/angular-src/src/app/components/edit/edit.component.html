@@ -1,5 +1,7 @@
 <h2 class="page-header">Customer</h2>
-<form (submit)="onAddSubmit()" >
+<h4><strong>ID: {{ id }}</strong><h4>
+
+<form (submit)="onUpdateSubmit(id)" >
   <div class="form-group">
     <label>First Name</label>
     <input type="text" [(ngModel)]="firstname" name="firstname" class="form-control">
@@ -13,7 +15,9 @@
     <input type="date" [(ngModel)]="birthdate" name="birthdate" useValueAsDate class="form-control">
   </div>
 
-  <input type="submit" class="btn btn-primary" value="Add Customer">
+  <a class="btn btn-warning" [routerLink]="['/dashboard']">Cancel</a>
+  <input type="submit" class="btn btn-primary" value="Save Customer">
 
 </form>
+
 
